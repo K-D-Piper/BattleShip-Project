@@ -1,3 +1,13 @@
+body{
+    background-color: blue;
+}
+
+.all-In-One {
+    background-color: blue;
+    color: aliceblue;
+    text-align: center;
+}
+
 .tiles button{
     background-color: lightblue;
     color: lightblue;
