@@ -4,17 +4,20 @@
 
 let hits = document.querySelectorAll('.hit');
 let misses= document.querySelectorAll('.miss');
-let clearId = document.getElementById("clearID")
+let resetId = document.getElementById("resetId")
 //naming variables END
 
-//clear START
+/*
+//reset START
 
-clearId.addEventListener("click", () => {
-    button.clearid.reset();
+resetId.addEventListener("click", () => {
+    button.resetId.reset(hits, misses);
 })
 
-//clear END (doesn't work yet)
+document.getElementById("resetId").onclick = reset;
 
+// END (doesn't work yet)
+*/
 
 //Functions START
 
@@ -22,7 +25,7 @@ hits.forEach(button => {
     button.addEventListener('click', () => {
         console.log("hit")
         alert("You HIT my battleship!")
-        button.style.color = 'green'
+        button.style.backgroundColor = 'green'
     })
 });
 
@@ -30,13 +33,25 @@ misses.forEach(button => {
     button.addEventListener('click', () => {
         console.log("miss")
         alert("HA! MISSED!")
-        button.style.color = 'red'
+        button.style.backgroundColor = 'red'
     })
 });
 
 //Functions END
 
 //Ramdomizing Squares START
+
+//needs to use Math.random()
+    //Math.random() returns a random number lower than 1 
+
+
+let all = Math.random()
+
+    if (all > .1){
+        console.log('hit')
+    } else {
+        console.log('miss')
+    }
 
 
 
