@@ -49,28 +49,36 @@ misses.forEach(button => {
 //needs to use Math.random()
     //Math.random() returns a random number lower than 1 
 
-let isHit = Math.random(0, 1)
-let battleButtons = document.querySelector('.myButtons');
+let battleButtons = document.querySelectorAll('.myButtons');
+
+console.log(battleButtons)
 //debugger
 
-switch (isHit > .5) {
+for (let i = 0; i < battleButtons.length; i++) {
+    const element = battleButtons[i];
+
+let isHit = Math.random(0, 9)
+console.log(isHit)    
+switch (isHit >= .8) {
     case (true):
-            battleButtons.addEventListener('click', () => {
+            battleButtons[i].addEventListener('click', () => {
                 console.log("hit")
                 alert("You HIT my battleship!")
-                battleButtons.style.backgroundColor = 'green'
-                battleButtons.style.color = 'green'
+                battleButtons[i].style.backgroundColor = 'green'
+                battleButtons[i].style.color = 'green'
             })
     break;
         case (false):
-                battleButtons.addEventListener('click', () => {
+                battleButtons[i].addEventListener('click', () => {
                     console.log("miss")
                     alert("HA! MISSED!")
-                    battleButtons.style.backgroundColor = 'red'
-                    battleButtons.style.color = 'red'
+                    battleButtons[i].style.backgroundColor = 'red'
+                    battleButtons[i].style.color = 'red'
             })
         break;
     default:
         console.log("i no worky")
         break;
+}
+
 }
