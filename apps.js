@@ -49,12 +49,12 @@ misses.forEach(button => {
 //needs to use Math.random()
     //Math.random() returns a random number lower than 1 
 
-let isHit = Math.random()
-let isMiss = 0
-let battleButtons = document.querySelectorAll('.myButtons');
+let isHit = Math.random(0, 1)
+let battleButtons = document.querySelector('.myButtons');
+//debugger
 
-switch (true) {
-    case (isHit > 1):
+switch (isHit > .5) {
+    case (true):
             battleButtons.addEventListener('click', () => {
                 console.log("hit")
                 alert("You HIT my battleship!")
@@ -62,11 +62,13 @@ switch (true) {
                 battleButtons.style.color = 'green'
             })
     break;
-        case (isHit < 1):
+        case (false):
+                battleButtons.addEventListener('click', () => {
                     console.log("miss")
                     alert("HA! MISSED!")
                     battleButtons.style.backgroundColor = 'red'
                     battleButtons.style.color = 'red'
+            })
         break;
     default:
         console.log("i no worky")
